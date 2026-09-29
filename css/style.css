@@ -135,9 +135,12 @@ nav a:focus {
      /* body {
           background-color: red;
      } */
+     .container > :first-child{
+          grid-column: 1 / span 7;
+          /* background-image: url("../images/header.jpg"); */
+     }
 
      /* Step 10: Write the selector/rule property to style the nav element */
-
      nav {
           text-align: right;
           /* top right bottom left */
