@@ -28,9 +28,17 @@ nav a:focus {
 
 
 /*Write selector/rule property to style the container */
-
+.container {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 13px;
+}
 
 /*Write selector/rule property to add the background image to the first div in the grid and place it in the grid. */
+.container > :first-child{
+     grid-column: 1 / span 5;
+     background-image: url("../images/header.jpg");
+}
 
 
 /* Steps 6 and 7: Write the selector/rule properties to  place the next five elements in the next
@@ -38,22 +46,125 @@ nav a:focus {
 
       /*This will be a lot of rules.... but be strategic and combine selectors*/
 
+.accounts, 
+.onlinebanking, 
+.security, 
+.loans, 
+.contact {
+     grid-column: 2 / span 3;
+}
+
+.accounts {
+     grid-row-start: 2;
+}
+
+.onlinebanking {
+     grid-row-start: 3;
+}
+
+.security {
+     grid-row-start: 4;
+}
+
+.loans {
+     grid-row-start: 5;
+}
+
+.contact {
+     grid-row-start: 6;
+}
+
+.accounts-image, 
+.onlinebanking-image, 
+.security-image, 
+.loans-image, 
+.contact-image {
+     max-height: 675px;
+     grid-column: 1 / span 5;
+}
+
+.accounts-image {
+     grid-row-start: 2;
+}
+
+.onlinebanking-image {
+     grid-row-start: 3;
+     justify-self: end;
+}
+
+.security-image {
+     grid-row-start: 4;
+}
+
+.loans-image {
+     grid-row-start: 5;
+     justify-self: end;
+}
+
+.contact-image {
+     grid-row-start: 6;
+}
+
+.accounts-image img,
+.onlinebanking-image img,
+.security-image img,
+.loans-image img,
+.contact-image img {
+     /* height: 100%; */
+     width: 100%;
+}
+
+.loans-image img {
+     height: 100%;
+}
+
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
+.text-block {
+     align-self: center;
+     justify-self: center;
+     text-align: center;
+}
 
+.text-block ul {
+     text-align: left;
+}
 
 /* Add your media query here */
+@media (min-width: 825px) {
+     /* body {
+          background-color: red;
+     } */
 
+     /* Step 10: Write the selector/rule property to style the nav element */
 
-  /* Step 10: Write the selector/rule property to style the nav element */
+     nav {
+          text-align: right;
+          /* top right bottom left */
+          padding: 35px 0px 35px 0px;
+     }
 
- 
-  /* Step 11: Write the selector/rule property to update the .container class */
+     /* Step 11: Write the selector/rule property to update the .container class */
+     .container {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 13px;
+     }
 
+     /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
+     .accounts, 
+     .security, 
+     .contact {
+          grid-column: 4 / span 3;
+     }
 
-  /* Steps 12 - 15: Update the grid-column property of the grid's children (where-needed)*/
+     .onlinebanking-image, 
+     .loans-image {
+          grid-column: 3 / span 5;
+     }
 
-
-
- /* Step 16:Write the selector/rule property to update the .text-block class */
-
+     /* Step 16:Write the selector/rule property to update the .text-block class */
+     .text-block {
+          max-height: 235px;
+     }
+}
