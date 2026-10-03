@@ -17,13 +17,13 @@ nav a:focus {
 /*Write selector/rule property to position the skip class element when it is in focus*/
 .skip a:focus {
      position: absolute;
-     top: -25px;
+     top: 25px;
 }
 
 /*Write selector/rule property to style all elements when in focus*/
 /* Note for myself: tho intuitively i did "main *:focus", it's unnecessary since specificity saved me */
 *:focus {
-     border: 2px dotted purple;
+     border: 5px dashed green;
 } 
 
 
@@ -169,6 +169,6 @@ nav a:focus {
      /* Step 16:Write the selector/rule property to update the .text-block class */
      .text-block {
           max-height: 235px;
-          overflow: hidden;
+          overflow: auto;
      }
 }
